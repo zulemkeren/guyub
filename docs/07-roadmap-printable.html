@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NAS / Guyub — 12-Month Roadmap</title>
+<style>
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.35;
+    color: #1c1917;
+    background: white;
+    padding: 0;
+  }
+  .header {
+    border-bottom: 2px solid #16a34a;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 16pt;
+    color: #14532d;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    font-size: 7.5pt;
+    color: #57534e;
+    margin-top: 2px;
+  }
+  h2 {
+    font-size: 9.5pt;
+    color: #14532d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #d6d3d1;
+    padding-bottom: 2px;
+  }
+  h3 {
+    font-size: 8.5pt;
+    color: #166534;
+    margin-top: 6px;
+    margin-bottom: 2px;
+  }
+  p {
+    margin-bottom: 4px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 4px 0;
+    font-size: 7.5pt;
+  }
+  th {
+    background: #f0fdf4;
+    color: #14532d;
+    text-align: left;
+    padding: 3px 5px;
+    border-bottom: 1px solid #bbf7d0;
+    font-weight: 600;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  td {
+    padding: 3px 5px;
+    border-bottom: 1px solid #e7e5e4;
+    vertical-align: top;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 6px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 6px 0;
+  }
+  .pill {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 6.5pt;
+    font-weight: 600;
+    background: #f0fdf4;
+    color: #166534;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ask-box {
+    background: #fefce8;
+    border-left: 3px solid #f59e0b;
+    padding: 6px 10px;
+    margin: 8px 0;
+    font-size: 8pt;
+  }
+  .ask-box strong {
+    color: #92400e;
+  }
+  .footer {
+    margin-top: 10px;
+    padding-top: 6px;
+    border-top: 1px solid #d6d3d1;
+    font-size: 7pt;
+    color: #57534e;
+    display: flex;
+    justify-content: space-between;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 2px;
+  }
+  ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #16a34a;
+  }
+  strong { color: #14532d; }
+  .accent { color: #16a34a; }
+  .small { font-size: 7.5pt; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Neighborhood Application Software <span style="color:#57534e;font-weight:400;">— 12-Month Roadmap</span></h1>
+  <div class="meta">Marketed as <strong class="accent">Guyub</strong> · For Microsoft for Startups Founders Hub — <strong>Growth Tier Upgrade</strong> · Submitted by Zulmi Mustaqiem · CEO &amp; Founder · [Submission date]</div>
+</div>
+
+<h2>Mission</h2>
+<p>Digitize Indonesia's 750,000 neighborhood units (Rukun Tetangga / RT) — replacing paper-based administration that fails 150 million residents daily — through a WhatsApp-first, Azure-native SaaS platform.</p>
+
+<h2>12-Month Milestones</h2>
+<table>
+  <thead>
+    <tr><th style="width:60px">Quarter</th><th>Product</th><th>Azure infra</th><th>Business</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Q1 2026</strong></td>
+      <td>Migrate App Service → Container Apps. Onboard 10 RTs in Banyumas regency.</td>
+      <td>Container Apps + PostgreSQL Flexible deployed in SEA region.</td>
+      <td>Pak RW endorsement letter (5+ RTs under one RW).</td>
+    </tr>
+    <tr>
+      <td><strong>Q2 2026</strong></td>
+      <td>Launch WhatsApp chatbot &amp; QRIS iuran. Onboard 25 RTs.</td>
+      <td>Azure OpenAI integrated. Document Intelligence for KK onboarding.</td>
+      <td>First paying customer at Rp 49K/mo. Rp 1M MRR.</td>
+    </tr>
+    <tr>
+      <td><strong>Q3 2026</strong></td>
+      <td>Multi-tenant Azure AD B2C. Onboard 40 RTs. Launch RW dashboard.</td>
+      <td>AI Search full-text. Azure AD B2C live. Sentinel for audit logs.</td>
+      <td>Rp 5M MRR. Pemkot Banyumas pilot signed.</td>
+    </tr>
+    <tr>
+      <td><strong>Q4 2026</strong></td>
+      <td>Onboard 50 RTs. Compliance hardening. Mobile PWA polish.</td>
+      <td>Defender for Cloud. Geo-redundant backup. Multi-region readiness.</td>
+      <td>Rp 10M MRR. 1000 Startup Digital admission. Pre-seed initiated.</td>
+    </tr>
+    <tr>
+      <td><strong>Q1 2027</strong></td>
+      <td>Expand to Yogyakarta + Solo. 75 RTs cumulative.</td>
+      <td>Front Door Premium. WAF tuning. Second region failover tested.</td>
+      <td>Pre-seed closed (target $200–300K). Series A discovery.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid-2">
+  <div>
+    <h2>Azure Spend Projection</h2>
+    <table>
+      <thead>
+        <tr><th>Q</th><th>RTs</th><th class="num">Monthly burn</th><th class="num">Cumulative</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Q1 2026</td><td>10</td><td class="num">$1,800</td><td class="num">$5,400</td></tr>
+        <tr><td>Q2 2026</td><td>25</td><td class="num">$3,500</td><td class="num">$15,900</td></tr>
+        <tr><td>Q3 2026</td><td>40</td><td class="num">$5,200</td><td class="num">$31,500</td></tr>
+        <tr><td>Q4 2026</td><td>50</td><td class="num">$6,400</td><td class="num">$50,700</td></tr>
+        <tr><td>Q1 2027</td><td>75</td><td class="num">$8,100</td><td class="num">$75,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h2>Revenue Projection (IDR)</h2>
+    <table>
+      <thead>
+        <tr><th>Q</th><th class="num">Free</th><th class="num">Paid</th><th class="num">Monthly</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Q1 2026</td><td class="num">10</td><td class="num">0</td><td class="num">Rp 0</td></tr>
+        <tr><td>Q2 2026</td><td class="num">18</td><td class="num">7</td><td class="num">Rp 343K</td></tr>
+        <tr><td>Q3 2026</td><td class="num">25</td><td class="num">15</td><td class="num">Rp 1M</td></tr>
+        <tr><td>Q4 2026</td><td class="num">25</td><td class="num">25</td><td class="num">Rp 2M</td></tr>
+        <tr><td>Q1 2027</td><td class="num">35</td><td class="num">40</td><td class="num">Rp 3.4M</td></tr>
+      </tbody>
+    </table>
+    <p class="small"><strong>2026 ARR:</strong> Rp 100M · <strong>2027 ARR target:</strong> Rp 1B (with B2G)</p>
+  </div>
+</div>
+
+<div class="ask-box">
+  <strong>The Ask:</strong> $150,000 Azure credits (Growth Tier) to fund 12-18 months of infrastructure as we scale from 1 RT pilot to 50 RTs and ~10K active warga. We have already consumed our $25K Scale Tier on legitimate production workloads (App Service, MySQL, ACS, Front Door). We are now ready for the next chapter.
+</div>
+
+<div class="grid-2">
+  <div>
+    <h2>Why this scale is justified</h2>
+    <ul>
+      <li><strong>189 active warga today</strong> in pilot RT 003 Purwokerto, demonstrated weekly engagement</li>
+      <li><strong>5+ neighboring RTs</strong> on waitlist, verbal Pak RW endorsement</li>
+      <li><strong>Government tailwind:</strong> Dana Desa Rp 60M/yr × 83K villages</li>
+      <li><strong>WhatsApp habit:</strong> 90%+ Indonesian adult adoption</li>
+      <li><strong>No dominant incumbent</strong> — government eRT/RW has near-zero adoption</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Risks &amp; Mitigations</h2>
+    <ul>
+      <li><strong>Adoption resistance</strong> → WhatsApp-first UX, hands-on onboarding</li>
+      <li><strong>UU PDP compliance</strong> → Azure encryption, per-role access, Sentinel audit</li>
+      <li><strong>Cost overrun</strong> → Alerts at 50/75/90%, serverless-first, Reserved Instances</li>
+      <li><strong>Solo founder</strong> → CSM hire Q2, co-founder search Q1</li>
+      <li><strong>B2G slow cycle</strong> → Bottom-up RT→RW→Kelurahan→Pemkot</li>
+    </ul>
+  </div>
+</div>
+
+<h2>What we deliver if Growth Tier approved</h2>
+<div class="grid-3">
+  <div>
+    <h3 class="accent">Product</h3>
+    <ul>
+      <li>50 RTs live by EOY 2026</li>
+      <li>WhatsApp chatbot for 10K warga</li>
+      <li>QRIS processing Rp 100M/mo</li>
+      <li>Auto-PDF reports for Bendahara</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="accent">Azure showcase value</h3>
+    <ul>
+      <li>SEA civic SaaS case study</li>
+      <li>WA Business + Azure OpenAI ref arch</li>
+      <li>UU PDP compliance pattern docs</li>
+      <li>12+ Azure services in production</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="accent">Business</h3>
+    <ul>
+      <li>Rp 24M+ MRR by EOY 2026</li>
+      <li>Pre-seed closed Q4 (~$250K)</li>
+      <li>Pemkot Banyumas as first B2G</li>
+      <li>1000 Startup Digital admission</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Founder Commitment</h2>
+<p>I commit to working full-time on this project, monthly progress updates to MS Founders Hub mentor, quarterly Azure architecture review, and public success story when we hit 50-RT milestone. 12+ months of unpaid development invested to date. Pilot validated. $25K consumed responsibly. Ready for next chapter.</p>
+
+<div class="footer">
+  <span><span class="pill">CONTACT</span> Zulmi Mustaqiem · zulemkeren@github · WA [your number]</span>
+  <span><span class="pill">LINKS</span> guyub-rho.vercel.app · github.com/zulemkeren/guyub</span>
+</div>
+
+</body>
+</html>
