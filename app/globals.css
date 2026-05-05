@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-earth-50 text-earth-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+
+  ::selection {
+    background: theme("colors.guyub.600");
+    color: white;
+  }
+}
+
+@layer utilities {
+  .batik-pattern {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(22, 163, 74, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .warm-gradient {
+    background: linear-gradient(135deg, #f0fdf4 0%, #fafaf9 50%, #fef3c7 100%);
+  }
+
+  .shadow-warm {
+    box-shadow:
+      0 1px 2px rgba(20, 83, 45, 0.06),
+      0 4px 16px rgba(20, 83, 45, 0.08);
+  }
+
+  .shadow-warm-lg {
+    box-shadow:
+      0 1px 2px rgba(20, 83, 45, 0.08),
+      0 8px 32px rgba(20, 83, 45, 0.12);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
