@@ -36,16 +36,16 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <Link
-              href="#hubungi"
+              href="/login"
               className="hidden rounded-full px-4 py-2 text-sm font-medium text-earth-700 transition-colors hover:bg-earth-100 sm:inline-block"
             >
-              Hubungi kami
+              Masuk
             </Link>
             <Link
-              href="#demo"
+              href="/login"
               className="inline-flex items-center gap-1.5 rounded-full bg-guyub-600 px-4 py-2 text-sm font-medium text-white shadow-warm transition-all hover:bg-guyub-700 hover:gap-2"
             >
-              Coba gratis <ArrowRight className="h-3.5 w-3.5" />
+              Coba demo <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <button className="md:hidden" aria-label="Menu">
               <Menu className="h-5 w-5 text-earth-700" />
@@ -79,10 +79,10 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                href="#demo"
+                href="/login"
                 className="group inline-flex items-center gap-2 rounded-full bg-guyub-600 px-6 py-3.5 text-base font-medium text-white shadow-warm-lg transition-all hover:bg-guyub-700 hover:scale-[1.02]"
               >
-                Coba gratis untuk RT Anda
+                Coba demo sekarang
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
