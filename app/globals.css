@@ -18,6 +18,21 @@
   }
 }
 
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-earth-200 bg-white px-3 py-2 text-sm text-earth-900 placeholder:text-earth-400 focus:border-guyub-400 focus:outline-none focus:ring-2 focus:ring-guyub-100;
+  }
+  .input-sm {
+    @apply w-full rounded-md border border-earth-200 bg-white px-2.5 py-1.5 text-xs text-earth-900 placeholder:text-earth-400 focus:border-guyub-400 focus:outline-none focus:ring-2 focus:ring-guyub-100;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg bg-guyub-600 px-4 py-2 text-sm font-medium text-white shadow-warm transition-colors hover:bg-guyub-700 disabled:opacity-60;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-earth-200 bg-white px-4 py-2 text-sm font-medium text-earth-700 transition-colors hover:bg-earth-50;
+  }
+}
+
 @layer utilities {
   .batik-pattern {
     background-image:

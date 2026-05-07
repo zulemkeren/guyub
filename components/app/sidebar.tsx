@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect, createContext, useContext } from "react";
 import {
   LayoutDashboard,
   Users,
@@ -13,11 +14,35 @@ import {
   ShieldCheck,
   Settings,
   LogOut,
+  X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
 import { useSession, roleLabel } from "@/lib/session";
 import { RT_INFO } from "@/lib/mock/data";
+
+interface SidebarContextType {
+  mobileOpen: boolean;
+  setMobileOpen: (v: boolean) => void;
+}
+
+const SidebarContext = createContext<SidebarContextType>({
+  mobileOpen: false,
+  setMobileOpen: () => {},
+});
+
+export function useSidebar() {
+  return useContext(SidebarContext);
+}
+
+export function SidebarProvider({ children }: { children: React.ReactNode }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  return (
+    <SidebarContext.Provider value={{ mobileOpen, setMobileOpen }}>
+      {children}
+    </SidebarContext.Provider>
+  );
+}
 
 interface NavItem {
   href: string;
@@ -33,9 +58,7 @@ interface NavGroup {
 
 const NAV: NavGroup[] = [
   {
-    items: [
-      { href: "/app", label: "Beranda", icon: LayoutDashboard },
-    ],
+    items: [{ href: "/app", label: "Beranda", icon: LayoutDashboard }],
   },
   {
     title: "Kependudukan",
@@ -61,23 +84,61 @@ const NAV: NavGroup[] = [
   },
   {
     title: "Lainnya",
-    items: [
-      { href: "/app/pengaturan", label: "Pengaturan", icon: Settings },
-    ],
+    items: [{ href: "/app/pengaturan", label: "Pengaturan", icon: Settings }],
   },
 ];
 
 export function AppSidebar() {
+  const { mobileOpen, setMobileOpen } = useSidebar();
+  const pathname = usePathname();
+
+  // Close mobile sidebar on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname, setMobileOpen]);
+
+  return (
+    <>
+      {/* Mobile backdrop */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-earth-950/40 backdrop-blur-sm md:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 flex h-screen w-64 shrink-0 flex-col border-r border-earth-200 bg-white transition-transform md:relative md:translate-x-0",
+          mobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        )}
+      >
+        <SidebarContent onClose={() => setMobileOpen(false)} />
+      </aside>
+    </>
+  );
+}
+
+function SidebarContent({ onClose }: { onClose: () => void }) {
   const pathname = usePathname();
   const { user, logout } = useSession();
 
   return (
-    <aside className="flex h-screen w-64 shrink-0 flex-col border-r border-earth-200 bg-white">
+    <>
       {/* Branding */}
-      <div className="flex h-16 items-center border-b border-earth-200 px-5">
+      <div className="flex h-16 items-center justify-between border-b border-earth-200 px-5">
         <Link href="/app">
           <Logo />
         </Link>
+        <button
+          type="button"
+          onClick={onClose}
+          className="md:hidden rounded-lg p-1.5 text-earth-500 hover:bg-earth-100 hover:text-earth-900"
+          aria-label="Tutup menu"
+        >
+          <X className="h-4 w-4" />
+        </button>
       </div>
 
       {/* RT info */}
@@ -104,9 +165,10 @@ export function AppSidebar() {
             )}
             <ul className="space-y-0.5">
               {group.items.map((item) => {
-                const active = item.href === "/app"
-                  ? pathname === "/app"
-                  : pathname.startsWith(item.href);
+                const active =
+                  item.href === "/app"
+                    ? pathname === "/app"
+                    : pathname.startsWith(item.href);
                 return (
                   <li key={item.href}>
                     <Link
@@ -121,7 +183,9 @@ export function AppSidebar() {
                       <item.icon
                         className={cn(
                           "h-4 w-4 transition-colors",
-                          active ? "text-guyub-600" : "text-earth-400 group-hover:text-earth-600"
+                          active
+                            ? "text-guyub-600"
+                            : "text-earth-400 group-hover:text-earth-600"
                         )}
                       />
                       <span className="flex-1">{item.label}</span>
@@ -174,6 +238,6 @@ export function AppSidebar() {
           </div>
         )}
       </div>
-    </aside>
+    </>
   );
 }

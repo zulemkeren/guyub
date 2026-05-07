@@ -1,14 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SessionProvider, useSession } from "@/lib/session";
-import { AppSidebar } from "@/components/app/sidebar";
+import { AppSidebar, SidebarProvider } from "@/components/app/sidebar";
+import { ToastProvider } from "@/components/ui/toast";
+import { CommandPalette } from "@/components/app/command-palette";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
-      <AppShell>{children}</AppShell>
+      <ToastProvider>
+        <SidebarProvider>
+          <AppShell>{children}</AppShell>
+        </SidebarProvider>
+      </ToastProvider>
     </SessionProvider>
   );
 }
@@ -35,6 +41,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
     <div className="flex h-screen overflow-hidden bg-earth-50">
       <AppSidebar />
       <div className="flex flex-1 flex-col overflow-hidden">{children}</div>
+      <CommandPalette />
     </div>
   );
 }
